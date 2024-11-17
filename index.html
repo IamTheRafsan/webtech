@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <img src="/Users/r.y.evansmac/Desktop/Evan/Aiub/9th Semster/Web Technologies/Mid Term/LAB/Lab 3/assets/id.png" style="margin-left: 520px;">
+    <div class="page">
+        <div class="leftsidebar">
+            Left Sidebar
+        </div>
+        <div class="content">
+            <div class="hero">
+                Hero Section
+            </div>
+            <div class="about">
+                About Section
+            </div>
+            <div class="benefits">
+        
+                <div class="column1"><br>
+                    <img src="/Applications/XAMPP/xamppfiles/htdocs/lavb2/assets/ss1.png" alt="book1" height="200px" width="200px">
+                </div>
+                <div class="column2"><br>
+                    <img src="/Applications/XAMPP/xamppfiles/htdocs/lab2/assets/ss2.png" alt="book1" height="200px" width="200px"></div>
+                <div class="column3"><br>
+                    <img src="/Applications/XAMPP/xamppfiles/htdocs/lab2/assets/ss3.png" alt="book1" height="200px" width="200px"></div>
+            </div>
+            <div class="review">
+                Review Section
+            </div>
+            <div class="contact">
+                
+                <div class="info">Book Register
+                    <form class="bookForm" action="process.php" method="post">
+                        <br><label for="name">Full Name: </label>
+                        <input type="text" id="fullName" name="fullName">
+                        <br><label for="name">Student Id: </label>
+                        <input type="text" id="id" name="id">
+                        <br><label for="email">E-mail: </label>
+                        <input type="email" id="email" name="email">
+                        <br><label for="books">Choose Book: </label>
+                        <select id="books" name="books" class="customSelector">
+                            <option value="to_kill_a_mockingbird">To Kill a Mockingbird</option>
+                            <option value="pride_and_prejudice">Pride and Prejudice</option>
+                            <option value="the_great_gatsby">The Great Gatsby</option>
+                            <option value="moby_dick">Moby Dick</option>
+                            <option value="war_and_peace">War and Peace</option>
+                            <option value="1984">1984</option>
+                            <option value="the_catcher_in_the_rye">The Catcher in the Rye</option>
+                            <option value="jane_eyre">Jane Eyre</option>
+                            <option value="crime_and_punishment">Crime and Punishment</option>
+                            <option value="the_odyssey">The Odyssey</option>
+                        </select><br>
+                        <br><label for="Token">Token Number: </label>
+                        <input type="text" id="token" name="token">
+                        <br><label for="borrowDate">Borrow Date: </label>
+                        <input type="date" id="borrowDate" name="borrowDate">
+                        <br><label for="returnDate">Return Date: </label>
+                        <input type="date" id="returnDate" name="returnDate">
+                        <input type="submit" id="submit" name="submit">
+
+                    </form>
+                </div>
+                <div class="form">Contact Form</div>
+            </div>
+        </div>
+        <div class="leftsidebar">
+            Right Sidebar
+        </div>
+    </div>
+    
+</body>
+</html>

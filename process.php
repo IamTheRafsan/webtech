@@ -52,12 +52,12 @@ echo "<div style='width: 400px; margin: 0 auto; padding:50px; border:1px solid #
 echo "<h2 style='text-align: center; font-size: 0.9em; color:#666;'> Thank you for borrowing the book</h2>";
 echo "<hr style ='border: 1px solid #333;'><br>";
 echo "<p>Full Name:  $StudentName</p>";
-echo "<p>Full Name:  $StudentId</p>";
-echo "<p>Full Name:  $StudentEmail</p>";
-echo "<p>Full Name:  $BookName</p>";
-echo "<p>Full Name:  $Token</p>";
-echo "<p>Full Name:  $BorrowDate</p>";
-echo "<p>Full Name:  $ReturnDate</p>";
+echo "<p>Student ID:  $StudentId</p>";
+echo "<p>Student Email:  $StudentEmail</p>";
+echo "<p>Book Name:  $BookName</p>";
+echo "<p>Token No.:  $Token</p>";
+echo "<p>Borrow Date:  $BorrowDate</p>";
+echo "<p>Return Date:  $ReturnDate</p>";
 
 echo "</div>";
 

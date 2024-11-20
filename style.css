@@ -115,7 +115,7 @@
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border-radius: 7px;
     border: 1px solid #ddd;
@@ -124,7 +124,7 @@ input[type="text"] {
     font-size: 16px;
 }
 input[type="email"] {
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border-radius: 7px;
     border: 1px solid #ddd;
@@ -133,7 +133,7 @@ input[type="email"] {
     font-size: 16px;
 }
 input[type="date"]{
-    width: 100%;
+    width: 95%;
     padding: 8px;
     border-radius: 7px;
     border: 1px solid #ddd;
@@ -149,6 +149,22 @@ input[type="submit"]{
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 16px;
-    background-color: rgb(13, 221, 221);
+    background-color: mediumslateblue;
+    color: white;
     
+}
+
+.customSelector {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+}
+
+.customSelector option {
+    padding: 10px;
+    font-size: 16px;
 }

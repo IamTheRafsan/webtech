@@ -55,9 +55,21 @@ if (!empty($_POST['fullName']) &&
 
             //Book Name
             $BookName = $_POST['books'];
+            $cookie_name = preg_replace("/[^a-zA-Z0-9]/", "", trim($BookName));;
+            $cookie_value = $StudentName;
 
 
             //Number of days borrowed
+            $presentDate = new DateTime();
+            $borrowDateObj = new DateTime($_POST['borrowDate']);
+            $returnDateObj = new DateTime($_POST['returnDate']);
+
+            if ($borrowDateObj < $presentDate || $returnDateObj < $presentDate) {
+                echo "Date Error! Borrow date and return date must be in the future.";
+                exit;
+            }
+
+
             $BorrowDate = $_POST['borrowDate'];
             $ReturnDate = $_POST['returnDate'];
         
@@ -69,24 +81,39 @@ if (!empty($_POST['fullName']) &&
             if($interval->days > 10 || $interval->days < 0){
                 echo "Date Error! Books can be borrowed for only 10 days.";
                 exit;
+
             }
             else {
 
+                if(isset($_COOKIE[$cookie_name])){
 
-                //Print if everything is ok.
-                echo "Borrow Successfull.";
+                    echo "Error. Book already borrowed by someone.";
+                    exit;
 
-                echo "<div style='width: 400px; margin: 0 auto; padding:50px; border:1px solid #333; font-family: Arial, sans-serif;'>";
-                echo "<h2 style='text-align: center; font-size: 0.9em; color:#666;'> Thank you for borrowing the book</h2>";
-                echo "<hr style ='border: 1px solid #333;'><br>";
-                echo "<p>Full Name:  $StudentName</p>";
-                echo "<p>Student ID:  $StudentId</p>";
-                echo "<p>Student Email:  $StudentEmail</p>";
-                echo "<p>Book Name:  $BookName</p>";
-                echo "<p>Token No.:  $Token</p>";
-                echo "<p>Borrow Date:  $BorrowDate</p>";
-                echo "<p>Return Date:  $ReturnDate</p>";
-                echo "</div>";
+                }
+                else{
+
+                    //Set Cookies
+
+                    setcookie($cookie_name, $cookie_value, time() + (86400*10), "/");
+
+
+                    //Print if everything is ok.
+                    echo "Borrow Successfull.";
+
+                    echo "<div style='width: 400px; margin: 0 auto; padding:50px; border:1px solid #333; font-family: Arial, sans-serif;'>";
+                    echo "<h2 style='text-align: center; font-size: 0.9em; color:#666;'> Thank you for borrowing the book</h2>";
+                    echo "<hr style ='border: 1px solid #333;'><br>";
+                    echo "<p>Full Name:  $StudentName</p>";
+                    echo "<p>Student ID:  $StudentId</p>";
+                    echo "<p>Student Email:  $StudentEmail</p>";
+                    echo "<p>Book Name:  $BookName</p>";
+                    echo "<p>Token No.:  $Token</p>";
+                    echo "<p>Borrow Date:  $BorrowDate</p>";
+                    echo "<p>Return Date:  $ReturnDate</p>";
+                    echo "</div>";
+
+                }        
 
             }
 

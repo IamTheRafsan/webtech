@@ -64,7 +64,7 @@ if (!empty($_POST['fullName']) &&
             $borrowDateObj = new DateTime($_POST['borrowDate']);
             $returnDateObj = new DateTime($_POST['returnDate']);
 
-            if ($borrowDateObj < $presentDate || $returnDateObj < $presentDate) {
+            if ($borrowDateObj < $presentDate->setTime(0,0,0) || $returnDateObj < $presentDate || $borrowDateObj == $returnDateObj) {
                 echo "Date Error! Borrow date and return date must be in the future.";
                 exit;
             }
@@ -78,7 +78,7 @@ if (!empty($_POST['fullName']) &&
             
             $interval = date_diff($date1, $date2);
 
-            if($interval->days > 10 || $interval->days < 0){
+            if($interval->days > 10){
                 echo "Date Error! Books can be borrowed for only 10 days.";
                 exit;
 

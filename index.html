@@ -38,7 +38,7 @@
             <div class="contact">
                 
                 <div class="info">Book Register
-                    <form class="bookForm" action="process.php" method="post">
+                    <form id="book_form" class="bookForm" action="process.php" method="post" ">
                         <br><label for="name">Ful Name: </label>
                         <input type="text" id="fullName" name="fullName">
                         <br><label for="name">Student Id: </label>
@@ -64,7 +64,7 @@
                         <input type="date" id="borrowDate" name="borrowDate">
                         <br><label for="returnDate">Return Date: </label>
                         <input type="date" id="returnDate" name="returnDate">
-                        <input type="submit" id="submit" name="submit">
+                        <input type="submit" id="submit" name="submit" onclick="setTimeout(() => document.getElementById('book_form').reset(), 50);">
 
                     </form>
                 </div>

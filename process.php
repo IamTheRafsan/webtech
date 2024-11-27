@@ -1,5 +1,7 @@
 <?php
 
+include('phpqrcode/qrlib.php');
+
 if (!empty($_POST['fullName']) && 
     !empty($_POST['id']) && 
     !empty($_POST['email']) && 
@@ -97,7 +99,7 @@ if (!empty($_POST['fullName']) &&
 
                     setcookie($cookie_name, $cookie_value, time() + (86400*10), "/");
 
-
+                    
                     //Print if everything is ok.
                     echo "Borrow Successfull.";
 
@@ -112,6 +114,17 @@ if (!empty($_POST['fullName']) &&
                     echo "<p>Borrow Date:  $BorrowDate</p>";
                     echo "<p>Return Date:  $ReturnDate</p>";
                     echo "</div>";
+
+                    $qrContent = "Student Name: $StudentName\nBook Name: $BookName\nBorrow Date: $BorrowDate\nReturn Date: $ReturnDate";
+                    $output_file = 'qrcode.png';  // relative path
+                    QRcode::png($qrContent, $output_file, QR_ECLEVEL_L, 10);
+
+                    echo "<div style='text-align: center; margin-top: 20px;'>";
+                    echo "<img src='https://support.thinkific.com/hc/article_attachments/360042081334/5d37325ea1ff6.png' alt='QR Code' style='width: 150px; height: 150px;'>";
+                    echo "</div>";
+                        
+
+                    
 
                 }        
 
